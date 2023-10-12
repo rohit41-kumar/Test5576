@@ -15,22 +15,40 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            name: "Alamofire",
-            url: "https://github.com/Alamofire/Alamofire.git",
-            .upToNextMajor(from: "5.8.0")
-        )
+            name: "SwiftyJSON",
+            url: "https://github.com/SwiftyJSON/SwiftyJSON.git",
+            from: "4.0.0"
+        ),
+        .package(
+            name: "SocketIO",
+            url: "https://github.com/socketio/socket.io-client-swift.git", 
+           from: "16.1.0"
+        ),
+        .package(
+            name: "SwiftyBeaver",
+            url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", 
+           .upToNextMajor(from: "2.0.0")
+        ),
+        .package(
+            name: "MMWormhole",
+            url: "https://github.com/JioMeet/MMWormhole.git",
+            from: "2.1.0"
+        ),
     ],
     targets: [
         .binaryTarget(
             name: "Test5576SDK",
-            url: "https://firebasestorage.googleapis.com/v0/b/chatapplication-bceea.appspot.com/o/Test5576SDK.xcframework.zip?alt=media&token=6986ccb5-fe96-4665-83a1-ef00bc25257c&_gl=1*mxype2*_ga*MTUxNzU4NzA2OS4xNjQwNTExNzU5*_ga_CW55HF8NVT*MTY5NzAzMTg0Mi4yLjEuMTY5NzAzMjMxMi42MC4wLjA.",
-            checksum: "62b02e945d1dc6cc0d84b9f3e2c3ab778be0a56636fb88ec9d90262550ea03eb"
+            url: "https://firebasestorage.googleapis.com/v0/b/chatapplication-bceea.appspot.com/o/Test5576SDK.xcframework.zip?alt=media&token=167de813-6e78-45fa-ac0c-87b86fd0e3ae&_gl=1*kg9dc*_ga*MTUxNzU4NzA2OS4xNjQwNTExNzU5*_ga_CW55HF8NVT*MTY5NzExNzY4NC4zLjEuMTY5NzExNzcxMS4zMy4wLjA.",
+            checksum: "17bfd2b28323d98a0080836ed0d172be4c3622abb6984fc85a31b1eac957edfe"
         ),
         .target(
             name: "Test5576Target",
             dependencies: [
                 .target(name: "Test5576SDK"),
-                .product(name: "Alamofire", package: "Alamofire"),
+                .product(name: "SwiftyJSON", package: "SwiftyJSON"),
+                .product(name: "SocketIO", package: "SocketIO"),
+                .product(name: "SwiftyBeaver", package: "SwiftyBeaver"),
+                .product(name: "MMWormhole", package: "MMWormhole"),
             ],
             path: "Framework/Dependency",
             exclude: []
