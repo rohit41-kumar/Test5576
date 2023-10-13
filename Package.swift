@@ -34,11 +34,16 @@ let package = Package(
             url: "https://github.com/JioMeet/MMWormhole.git",
             from: "2.1.0"
         ),
+        .package(
+            name: "JioMeetRtcEngine_iOS",
+            url: "https://github.com/JioMeet/JioMeet-rtc-engine-ios.git",
+            "3.7.2"..<"3.7.3"
+        ),
     ],
     targets: [
         .binaryTarget(
             name: "Test5576SDK",
-            url: "https://firebasestorage.googleapis.com/v0/b/chatapplication-bceea.appspot.com/o/Test5576SDK.xcframework.zip?alt=media&token=167de813-6e78-45fa-ac0c-87b86fd0e3ae&_gl=1*kg9dc*_ga*MTUxNzU4NzA2OS4xNjQwNTExNzU5*_ga_CW55HF8NVT*MTY5NzExNzY4NC4zLjEuMTY5NzExNzcxMS4zMy4wLjA.",
+            url: "https://firebasestorage.googleapis.com/v0/b/chatapplication-bceea.appspot.com/o/0.0.2%2FTest5576SDK.xcframework.zip?alt=media&token=4537271c-4d85-4f4a-bc13-34a0502f6bef&_gl=1*a0skwq*_ga*MTUxNzU4NzA2OS4xNjQwNTExNzU5*_ga_CW55HF8NVT*MTY5NzE4Mjg2NC40LjEuMTY5NzE4Mjk5My40Ni4wLjA.",
             checksum: "17bfd2b28323d98a0080836ed0d172be4c3622abb6984fc85a31b1eac957edfe"
         ),
         .target(
@@ -49,6 +54,8 @@ let package = Package(
                 .product(name: "SocketIO", package: "SocketIO"),
                 .product(name: "SwiftyBeaver", package: "SwiftyBeaver"),
                 .product(name: "MMWormhole", package: "MMWormhole"),
+                .product(name: "RTC", package: "JioMeetRtcEngine_iOS"),
+                .product(name: "RTM", package: "JioMeetRtcEngine_iOS"),
             ],
             path: "Framework/Dependency",
             exclude: []
